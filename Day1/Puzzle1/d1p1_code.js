@@ -1,6 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
-const doSolution = require('./solution');
+const solution = require('./solution');
 
 const path = "./d1p1_input.txt";
 const inputArray = [];
@@ -16,7 +16,8 @@ file.on('line', (line) => {
 });
 
 file.on("close", () => {
-    doSolution(inputArray);
+    solution.doSolution1(inputArray);
+    solution.doSolution2(inputArray);
 })
 
 
