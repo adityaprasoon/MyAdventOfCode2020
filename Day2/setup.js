@@ -14,8 +14,8 @@ const file = readline.createInterface({
 file.on('line', (line) => {
     let parts = line.split(" ");
     let obj = {
-        min: parts[0].split("-")[0],
-        max: parts[0].split("-")[1],
+        min: Number(parts[0].split("-")[0]),
+        max: Number(parts[0].split("-")[1]),
         character: parts[1].charAt(0),
         password: parts[2]
     };
@@ -25,5 +25,5 @@ file.on('line', (line) => {
 
 file.on("close", () => {
     solution.doSolution1(inputArray);
-    //solution.doSolution2(inputArray);
+    solution.doSolution2(inputArray);
 })

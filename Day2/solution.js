@@ -13,7 +13,22 @@ function doSolution1(inputArray) {
 }
 
 function doSolution2(inputArray) {
-    
+    let validCount = 0;
+    console.log(inputArray)
+    inputArray.forEach((entry) => {
+        let charCount = 0;
+        if (entry.password.charAt(entry.min - 1) == entry.character) {
+            charCount++;
+        }
+        if (entry.password.charAt(entry.max - 1) == entry.character) {
+            charCount++;
+        }
+
+        if (charCount == 1) {
+            validCount++;
+        }
+    });
+    console.log(validCount);
 }
 
-module.exports = { doSolution1, doSolution2 };
+module.exports = {doSolution1, doSolution2};
